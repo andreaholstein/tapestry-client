@@ -1,0 +1,82 @@
+// --------- FXNALITY ---------
+@use "./_variables" as *;
+@use "./_mixins" as *;
+@use "./_fonts" as *;
+
+h1 {
+  margin: 0;
+  font-size: 52px;
+  line-height: 2rem;
+  @include tablet {
+    // font-size: 40px;
+    // line-height: 40px;
+  }
+  @include desktop {
+    // font-size: 52px;
+    // line-height: 66px;
+  }
+}
+
+h2 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 2.375rem;
+  @include tablet {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  @include desktop {
+  }
+}
+
+h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4375rem;
+  @include tablet {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  @include desktop {
+  }
+}
+
+h4 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 0.9375rem;
+  @include tablet {
+    font-size: 26px;
+    line-height: 2rem;
+  }
+  @include desktop {
+  }
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 15px;
+  @include tablet {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  @include desktop {
+  }
+}
+
+a {
+  margin: 0;
+  font-size: 12px;
+  line-height: 15px;
+  @include tablet {
+    font-size: 14px;
+    line-height: 17.5008px;
+  }
+  @include desktop {
+  }
+}
+
+ul {
+  list-style-type: none;
+}
