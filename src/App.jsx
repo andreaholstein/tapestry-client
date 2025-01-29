@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 // -------------- PAGES --------------
 import HomePage from './pages/HomePage/HomePage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 // -------------- COMPONENTS --------------
 import Header from './components/Header/Header'
 // -------------- STYLES --------------
@@ -14,7 +15,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/profile" element={<ProfilePage />} />
+          {/* <Route path="/:id/profile" element={<ProfilePage />} /> */}
         </Routes>
       </BrowserRouter>
     </>

@@ -17,24 +17,24 @@ function Welcome() {
 
     useEffect(() => {
         // AXIOS GET
-        // const getUser = async () => {
-        // try {
-        //     const response = await axios.get(`${url}/users`);
-        //     console.log(response.data);
+        const getUser = async () => {
+            try {
+                const response = await axios.get(`${url}/users`);
+                console.log(response.data);
 
-        //     setUsers(response.data);
-        // } catch (error) {
-        //     console.error(error);
-        //     setError(error);
-        // }
+                setUsers(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
 
-        // if (id === users.id) {
-        //     setSoloUser(users.name);
-        //     setUserCommunities(users.communities);
-        // }
-        // };
+            if (id === users.id) {
+                setSoloUser(users.name);
+                setUserCommunities(users.communities);
+            }
+        };
         // LOAD API DATA ONTO SCREEN
-        // getUsers();
+        getUsers();
     }, []); // [] = runs once + right away!
 
 
