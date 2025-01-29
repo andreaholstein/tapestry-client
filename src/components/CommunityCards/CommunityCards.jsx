@@ -1,5 +1,6 @@
 // -------------- FXNALITY --------------
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 // -------------- COMPONENTS --------------
 import SoloCommCard from '../SoloCommCard/SoloCommCard'
 // -------------- STYLES --------------
@@ -16,7 +17,10 @@ function CommunityCards() {
         // AXIOS GET
         const getCommunities = async () => {
             try {
-                const response = await axios.get(`${url}/communities`);
+                const response = await axios.get(`${url}/users`);
+                console.log(response.data);
+                // need communities for user
+
                 setCommunities(response.data);
             } catch (error) {
                 console.error(error);
