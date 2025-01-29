@@ -11,8 +11,8 @@ function HomePage() {
     return (
         <>
             <Header />
-            <CommunityCards />
-            <CommunityCards />
+            <Welcome />
+            {/* <CommunityCards /> */}
         </>
     )
 }
