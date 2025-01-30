@@ -17,7 +17,6 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/profile" element={<ProfilePage />} />
-          {/* <Route path="/:id/profile" element={<ProfilePage />} /> */}
         </Routes>
       </BrowserRouter>
     </>
