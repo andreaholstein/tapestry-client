@@ -52,7 +52,7 @@ function Welcome(user) {
                 <div className="welcome__text-wrap">
                     <h2 className="welcome__content welcome__greeting">Welcome back,<span className="welcome__name"> {user.user.username}</span>!</h2>
                     {/* <p className="welcome__alert">You have {community.length} communities waiting for your to check in!</p> */}
-                    <p className="welcome__alert">You have 4 communities waiting for your to check in!</p>
+                    {/* <p className="welcome__alert">You have 4 communities waiting for you to check in!</p> */}
                 </div>
                 <div className="welcome__content welcome__graphics welcome__graphics--right">!</div>
             </div>

@@ -6,7 +6,8 @@ import SoloCommCard from '../SoloCommCard/SoloCommCard'
 // -------------- STYLES --------------
 import './CommunityCards.scss'
 
-function CommunityCards() {
+function CommunityCards(user) {
+
     // const url = import.meta.env.VITE_API_URL;
 
     // // STATE VARIABLES FOR API CALL

@@ -49,7 +49,7 @@ function HomePage() {
     return (
         <section className="homepage">
             <Welcome user={soloUser} />
-            {/* <CommunityCards /> */}
+            <CommunityCards user={soloUser} />
         </section>
     )
 }
