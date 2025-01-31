@@ -7,10 +7,10 @@ import CommunityCards from '../../components/CommunityCards/CommunityCards'
 // -------------- STYLES --------------
 import './HomePage.scss'
 
-function HomePage() {
+function HomePage({ url, authToken }) {
 
-    const url = import.meta.env.VITE_API_URL;
-    const authToken = localStorage.getItem("authToken");
+    // const url = import.meta.env.VITE_API_URL;
+    // const authToken = localStorage.getItem("authToken");
 
     // STATE VARIABLES FOR API CALL
     const [userCommunities, setUserCommunities] = useState([]);

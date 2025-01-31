@@ -7,11 +7,9 @@ import JoinedCommunities from '../../components/JoinedCommunities/JoinedCommunit
 // -------------- STYLES --------------
 import './ProfilePage.scss'
 
-function ProfilePage() {
+function ProfilePage({ url, authToken }) {
 
-    const url = import.meta.env.VITE_API_URL;
-    // const { id } = useParams();
-
+    // const url = import.meta.env.VITE_API_URL;
 
     const [user, setUser] = useState(null);
     const [communities, setCommunities] = useState([]);
@@ -33,7 +31,6 @@ function ProfilePage() {
         getProfile();
     }, []);
 
-
     useEffect(() => {
         const getCommunities = async () => {
             try {
@@ -49,9 +46,6 @@ function ProfilePage() {
         };
         getCommunities();
     }, []);
-
-    console.log(communities);
-
 
     return (
         <section className="profilepage">

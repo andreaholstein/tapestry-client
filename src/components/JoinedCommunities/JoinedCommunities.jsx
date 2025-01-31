@@ -7,7 +7,7 @@ import SoloCommCard from '../SoloCommCard/SoloCommCard';
 // -------------- STYLES --------------
 import './JoinedCommunities.scss'
 
-function JoinedCommunities(communities) {
+function JoinedCommunities({ communities }) {
 
     return (
         <section className="joined">

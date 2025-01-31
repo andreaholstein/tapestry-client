@@ -1,14 +1,15 @@
 // -------------- FXNALITY --------------
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router';
 // -------------- COMPONENTS --------------
 import SoloCommCard from '../SoloCommCard/SoloCommCard'
 // -------------- STYLES --------------
 import './CommunityCards.scss'
 
-function CommunityCards(communities) {
+function CommunityCards({ communities }) {
 
-    console.log("Comms: ", communities);
+    console.log("CommsCards: ", communities);
 
 
     return (
