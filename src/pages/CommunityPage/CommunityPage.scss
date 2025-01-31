@@ -1,0 +1,28 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.community-page {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	background: $pale;
+	min-height: 100vh;
+
+	.community-sidebar {
+		flex: 0 0 250px; 
+	}
+
+	.community-feed {
+		flex: 1; 
+		background: $white;
+		padding: 20px;
+		border-radius: 12px;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	h1 {
+		font-size: 1.5rem;
+		color: $grape;
+		margin-bottom: 15px;
+	}
+}

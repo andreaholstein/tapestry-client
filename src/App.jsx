@@ -1,10 +1,11 @@
 // -------------- FXNALITY --------------
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 // -------------- PAGES --------------
 import HomePage from "./pages/HomePage/HomePage";
-import PostsPage from "./pages/PostsPage/PostsPage";
+import CommunityPage from "./pages/CommunityPage/CommunityPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 // -------------- COMPONENTS --------------
-import Header from './components/Header/Header'
+import Header from "./components/Header/Header";
 // -------------- STYLES --------------
 import "./App.scss";
 
@@ -15,7 +16,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/posts" element={<PostsPage />} />
+          <Route path="/community/:id" element={<CommunityPage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </>
