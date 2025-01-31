@@ -3,9 +3,9 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.community-cards {
-  padding: 3rem 1rem;
+.profilepage {
+  padding: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }

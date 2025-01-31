@@ -13,6 +13,7 @@ function Header() {
                 </Link>
                 <Link to="/profile">
                     <button className="header__profile-button">PROFILE</button>
+                    {/* <svg className="header__profile-icon"></svg> */}
                 </Link>
                 {/* alt: can use onClick + useNavigate */}
             </nav>

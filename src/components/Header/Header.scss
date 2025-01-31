@@ -1,0 +1,20 @@
+// --------- FXNALITY ---------
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  background-color: $berry;
+
+  &__nav {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo,
+  &__profile-icon {
+    color: $pale;
+  }
+}

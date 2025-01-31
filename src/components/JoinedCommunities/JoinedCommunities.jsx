@@ -1,12 +1,12 @@
 // -------------- FXNALITY --------------
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-// -------------- COMPONENTS --------------
-import SoloCommCard from '../SoloCommCard/SoloCommCard'
 // -------------- STYLES --------------
-import './CommunityCards.scss'
+import './JoinedCommunities.scss'
 
-function CommunityCards() {
+function JoinedCommunities() {
+    // RECYCLED FROM COMMUNITYCARDS
+
     const url = import.meta.env.VITE_API_URL;
 
     // STATE VARIABLES FOR API CALL
@@ -31,22 +31,21 @@ function CommunityCards() {
         getCommunities();
     }, []); // [] = runs once + right away!
 
-
     return (
-        <section className="community-cards">
+        <section className="joined">
             {communities.map((community) => {
                 return (
                     <Link
                         to={`path to community`}
                         key={community.id}
-                        className="community-card__link"
+                        className="joined__link"
                     >
                         <SoloCommCard community={community} />
                     </Link>
                 )
             })}
-        </section >
+        </section>
     )
 }
 
-export default CommunityCards
+export default JoinedCommunities
