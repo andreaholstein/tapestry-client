@@ -8,6 +8,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage'
 import Header from './components/Header/Header'
 // -------------- STYLES --------------
 import './App.scss'
+import SignupPage from './pages/SignupPage/SignupPage'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/signup" element={<SignupPage/>} />
           <Route path="/community/:id" element={<CommunityPage />} />
           {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/profile" element={<ProfilePage />} />
