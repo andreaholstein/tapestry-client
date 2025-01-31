@@ -1,16 +1,10 @@
 import ProfileCard from "../ProfileCard/ProfileCard";
 import "./CommunitySidebar.scss";
 
-const CommunitySidebar = () => {
-	const placeholderUser = {
-		name: "Community Member",
-		username: "member",
-		profilePic: "https://via.placeholder.com/80",
-	};
-
+const CommunitySidebar = ({ user }) => {
 	return (
 		<div className="community-sidebar">
-			<ProfileCard user={placeholderUser} />
+			<ProfileCard user={user} /> {/* Uses real user data if available */}
 			<button className="create-post-btn">+ Create a post</button>
 			<nav>
 				<ul>
