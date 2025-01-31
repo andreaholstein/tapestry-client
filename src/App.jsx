@@ -11,17 +11,18 @@ import './App.scss'
 import SignupPage from './pages/SignupPage/SignupPage'
 
 function App() {
+  const url = import.meta.env.VITE_API_URL;
+  const authToken = localStorage.getItem("authToken");
 
   return (
     <>
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/signup" element={<SignupPage/>} />
+          <Route path="/" element={<HomePage url={url} authToken={authToken} />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
-          {/* <Route path="/" element={<HomePage />} /> */}
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage url={url} authToken={authToken} />} />
         </Routes>
       </BrowserRouter>
     </>

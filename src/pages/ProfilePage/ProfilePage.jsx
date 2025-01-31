@@ -7,44 +7,50 @@ import JoinedCommunities from '../../components/JoinedCommunities/JoinedCommunit
 // -------------- STYLES --------------
 import './ProfilePage.scss'
 
-function ProfilePage() {
+function ProfilePage({ url, authToken }) {
 
-    const url = import.meta.env.VITE_API_URL;
-    // const { id } = useParams();
+    // const url = import.meta.env.VITE_API_URL;
 
-    // STATE VARIABLES FOR API CALL
-    const [users, setUsers] = useState([]);
-    const [soloUser, setSoloUser] = useState(null);
-    const [userCommunities, setUserCommunities] = useState([]);
+    const [user, setUser] = useState(null);
+    const [communities, setCommunities] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // // AXIOS GET
-        // const getUser = async () => {
-        //     try {
-        //         const response = await axios.get(`${url}/users`);
-        //         console.log(response.data);
+        const getProfile = async () => {
+            try {
+                const response = await axios.get(`${url}users/profile`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                console.log(response.data);
+                setUser(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
+        };
+        getProfile();
+    }, []);
 
-        //         setUsers(response.data);
-        //     } catch (error) {
-        //         console.error(error);
-        //         setError(error);
-        //     }
-
-        //     if (id === users.id) {
-        //         setSoloUser(users.name);
-        //         setUserCommunities(users.communities);
-        //     }
-        // };
-        // // LOAD API DATA ONTO SCREEN
-        // getUsers();
-    }, []); // [] = runs once + right away!
+    useEffect(() => {
+        const getCommunities = async () => {
+            try {
+                const response = await axios.get(`${url}user-communities`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                console.log(response.data);
+                setCommunities(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
+        };
+        getCommunities();
+    }, []);
 
     return (
         <section className="profilepage">
-            <Profile user={soloUser} />
-            <JoinedCommunities />
-            {/* ^^ axios request currently on JoinedCommunities */}
+            <Profile user={user} />
+            <JoinedCommunities communities={communities} />
         </section>
     )
 }
