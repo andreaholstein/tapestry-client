@@ -8,6 +8,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Header from "./components/Header/Header";
 // -------------- STYLES --------------
 import "./App.scss";
+import PostsPage from "./pages/PostsPage/PostsPage";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
-          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/posts" element={<PostsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
