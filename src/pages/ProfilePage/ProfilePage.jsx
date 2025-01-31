@@ -13,36 +13,38 @@ function ProfilePage() {
     // const { id } = useParams();
 
     // STATE VARIABLES FOR API CALL
-    const [users, setUsers] = useState([]);
-    const [soloUser, setSoloUser] = useState(null);
-    const [userCommunities, setUserCommunities] = useState([]);
-    const [error, setError] = useState(null);
+    // const [users, setUsers] = useState([]);
+    // const [soloUser, setSoloUser] = useState(null);
+    // const [userCommunities, setUserCommunities] = useState([]);
+    // const [error, setError] = useState(null);
 
     useEffect(() => {
         // // AXIOS GET
-        // const getUser = async () => {
-        //     try {
-        //         const response = await axios.get(`${url}/users`);
-        //         console.log(response.data);
+        const getProfile = async () => {
+            try {
+                const response = await axios.get(`${url}users/profile`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                console.log(response.data);
 
-        //         setUsers(response.data);
-        //     } catch (error) {
-        //         console.error(error);
-        //         setError(error);
-        //     }
+                // setUsers(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
 
-        //     if (id === users.id) {
-        //         setSoloUser(users.name);
-        //         setUserCommunities(users.communities);
-        //     }
-        // };
-        // // LOAD API DATA ONTO SCREEN
-        // getUsers();
+            // if (id === users.id) {
+            //     setSoloUser(users.name);
+            //     setUserCommunities(users.communities);
+            // }
+        };
+        // LOAD API DATA ONTO SCREEN
+        // getProfile();
     }, []); // [] = runs once + right away!
 
     return (
         <section className="profilepage">
-            <Profile user={soloUser} />
+            <Profile />
             <JoinedCommunities />
             {/* ^^ axios request currently on JoinedCommunities */}
         </section>

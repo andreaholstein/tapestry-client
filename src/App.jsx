@@ -18,7 +18,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
-          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>

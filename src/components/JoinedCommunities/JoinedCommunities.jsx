@@ -1,6 +1,9 @@
 // -------------- FXNALITY --------------
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router';
+// -------------- COMPONENTS --------------
+import SoloCommCard from '../SoloCommCard/SoloCommCard';
 // -------------- STYLES --------------
 import './JoinedCommunities.scss'
 
@@ -17,10 +20,8 @@ function JoinedCommunities() {
         // AXIOS GET
         const getCommunities = async () => {
             try {
-                const response = await axios.get(`${url}/users`);
+                const response = await axios.get(`${url}user-communities`);
                 console.log(response.data);
-                // need communities for user
-
                 setCommunities(response.data);
             } catch (error) {
                 console.error(error);
@@ -31,16 +32,17 @@ function JoinedCommunities() {
         getCommunities();
     }, []); // [] = runs once + right away!
 
+    console.log(communities);
+
     return (
         <section className="joined">
             {communities.map((community) => {
                 return (
                     <Link
                         to={`path to community`}
-                        key={community.id}
                         className="joined__link"
                     >
-                        <SoloCommCard community={community} />
+                        <SoloCommCard community={community} key={community.community_id} />
                     </Link>
                 )
             })}
