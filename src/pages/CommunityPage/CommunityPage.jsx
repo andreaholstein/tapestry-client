@@ -12,30 +12,41 @@ const CommunityPage = () => {
 	const { id } = useParams();
 	const [community, setCommunity] = useState(null);
 	const [posts, setPosts] = useState([]);
-	const [user, setUser] = useState(null); 
+	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchCommunityData = async () => {
 			try {
-				const token = localStorage.getItem("authToken"); 
+				const token = localStorage.getItem("authToken");
 
-				const { data: communityData } = await axios.get(`http://localhost:8080/communities/${id}`);
+				const { data: communityData } = await axios.get(
+					`http://localhost:8080/communities/${id}`
+				);
 				setCommunity(communityData);
 
 				if (token) {
-					const { data: userData } = await axios.get("http://localhost:8080/users", {
-						headers: { Authorization: `Bearer ${token}` },
-					});
+					const { data: userData } = await axios.get(
+						"http://localhost:8080/users/profile",
+						{
+							headers: { Authorization: `Bearer ${token}` },
+						}
+					);
 					setUser(userData);
 				}
 
-				const { data: postsData } = await axios.get(`http://localhost:8080/posts`, {
-					params: { community_id: id }
-				});
+				const { data: postsData } = await axios.get(
+					`http://localhost:8080/posts`,
+					{
+						params: { community_id: id },
+					}
+				);
 				setPosts(postsData);
 			} catch (error) {
-				console.error("Error fetching community, user, or posts:", error);
+				console.error(
+					"Error fetching community, user, or posts:",
+					error
+				);
 			} finally {
 				setLoading(false);
 			}
