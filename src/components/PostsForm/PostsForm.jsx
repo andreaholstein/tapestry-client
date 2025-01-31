@@ -2,50 +2,39 @@
 import "./PostsForm.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getUserId } from "../../../authUtils.js";
-function PostsForm({ onSubmit }) {
+import { useParams, useHistory } from "react-router-dom";
+
+function PostsForm() {
   const url = import.meta.env.VITE_API_URL;
+  const { communityId } = useParams();
+  const history = useHistory();
   const [postText, setPostText] = useState("");
-  const [communityId, setCommunityId] = useState(null);
   const [postMedia, setPostMedia] = useState(null);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [communities, setCommunities] = useState([]);
-  const userId = getUserId();
 
-  const userToken = response.data.token;
-  localStorage.setItem("authToken", userToken);
+  const userToken = localStorage.getItem("authToken");
 
   useEffect(() => {
-    if (!userId) {
+    if (!userToken) {
       setError("User is not logged in");
       return;
     }
-    const fetchUserCommunity = async () => {
-      try {
-        const response = await axios.get(`${url}/users/${userId}/community`);
-        if (response.data && response.data.community_id) {
-          setCommunityId(response.data.community_id);
-        } else {
-          setError("No community assigned to user");
-        }
-      } catch (error) {
-        console.error("Error fetching user community:", error);
-        setError("Failed to load community");
-      }
-    };
-  }, [userId]);
+
+    if (!communityId) {
+      setError("No community selected");
+    }
+  }, [userToken, communityId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!userId || !communityId) {
+    if (!userToken || !communityId) {
       setError("User or community not found");
       return;
     }
 
     setIsSubmitting(true);
     const formData = new FormData();
-    formData.append("user_id", userId);
     formData.append("post_text", postText);
     formData.append("community_id", communityId);
     if (postMedia) formData.append("post_media", postMedia);
@@ -60,6 +49,7 @@ function PostsForm({ onSubmit }) {
         setPostMedia(null);
         setError("");
         alert("Post submitted successfully!");
+        history.push(`/community/${communityId}`);
       }
     } catch (error) {
       console.error("Error posting data:", error);
