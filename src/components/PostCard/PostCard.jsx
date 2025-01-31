@@ -1,19 +1,42 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./PostCard.scss";
 
 const PostCard = ({ post }) => {
+	const [postAuthor, setPostAuthor] = useState(null);
+
+	useEffect(() => {
+		const fetchPostAuthor = async () => {
+			try {
+				const { data: userData } = await axios.get(
+					`http://localhost:8080/users/${post.user_id}`
+				);
+				setPostAuthor(userData);
+			} catch (error) {
+				console.error("Error fetching post author:", error);
+			}
+		};
+
+		fetchPostAuthor();
+	}, [post.user_id]);
+
 	return (
 		<div className="post-card">
 			<div className="post-header">
 				<img
 					src={
-						post.user?.profilePic ||
+						postAuthor?.profile_picture ||
 						"https://via.placeholder.com/50"
 					}
-					alt={post.user?.name}
+					alt={postAuthor?.username || "User"}
 				/>
 				<div className="user-info">
-					<h3>{post.user?.name || "Unknown User"}</h3>
-					<p>{post.timestamp || "Just now"}</p>
+					<h3>
+						{postAuthor
+							? `${postAuthor.first_name} ${postAuthor.last_name}`
+							: "Unknown User"}
+					</h3>
+					<p>@{postAuthor?.username || "unknown"}</p>
 				</div>
 			</div>
 			<p className="post-content">{post.post_text}</p>
