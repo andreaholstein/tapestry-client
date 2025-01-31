@@ -6,31 +6,9 @@ import SoloCommCard from '../SoloCommCard/SoloCommCard'
 // -------------- STYLES --------------
 import './CommunityCards.scss'
 
-function CommunityCards(user) {
+function CommunityCards(communities) {
 
-    // const url = import.meta.env.VITE_API_URL;
-
-    // // STATE VARIABLES FOR API CALL
-    // const [communities, setCommunities] = useState([]);
-    // const [error, setError] = useState(null);
-
-    // useEffect(() => {
-    //     // AXIOS GET
-    //     const getCommunities = async () => {
-    //         try {
-    //             const response = await axios.get(`${url}/users`);
-    //             console.log(response.data);
-    //             // need communities for user
-
-    //             setCommunities(response.data);
-    //         } catch (error) {
-    //             console.error(error);
-    //             setError(error);
-    //         }
-    //     };
-    //     // LOAD API DATA ONTO SCREEN
-    //     getCommunities();
-    // }, []); // [] = runs once + right away!
+    console.log("Comms: ", communities);
 
 
     return (

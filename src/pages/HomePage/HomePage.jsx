@@ -11,23 +11,19 @@ function HomePage() {
 
     const url = import.meta.env.VITE_API_URL;
     const authToken = localStorage.getItem("authToken");
-    // console.log(authToken);
-
 
     // STATE VARIABLES FOR API CALL
+    const [userCommunities, setUserCommunities] = useState([]);
     const [soloUser, setSoloUser] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // AXIOS GET
         const getUser = async () => {
             try {
-                const response = await axios.get(`${url}user-communities`, {
+                const response = await axios.get(`${url}users/profile`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                // setSoloUser(response.data);
-                setSoloUser(response.data[0]);
-
+                setSoloUser(response.data);
             } catch (error) {
                 console.error(error);
                 setError(error);
@@ -38,18 +34,28 @@ function HomePage() {
             //     // setUserCommunities(users.communities);
             // }
         };
-        // LOAD API DATA ONTO SCREEN
         getUser();
-    }, []); // [] = runs once + right away!
+    }, []);
 
-
-    console.log("Solo: ", soloUser);
-
+    useEffect(() => {
+        const getUserCommunities = async () => {
+            try {
+                const response = await axios.get(`${url}user-communities`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                setUserCommunities(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
+        };
+        getUserCommunities();
+    }, []);
 
     return (
         <section className="homepage">
-            <Welcome user={soloUser} />
-            <CommunityCards user={soloUser} />
+            <Welcome user={soloUser} communities={userCommunities} />
+            <CommunityCards communities={userCommunities} />
         </section>
     )
 }

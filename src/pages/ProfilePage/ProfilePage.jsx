@@ -12,41 +12,51 @@ function ProfilePage() {
     const url = import.meta.env.VITE_API_URL;
     // const { id } = useParams();
 
-    // STATE VARIABLES FOR API CALL
-    // const [users, setUsers] = useState([]);
-    // const [soloUser, setSoloUser] = useState(null);
-    // const [userCommunities, setUserCommunities] = useState([]);
-    // const [error, setError] = useState(null);
+
+    const [user, setUser] = useState(null);
+    const [communities, setCommunities] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        // // AXIOS GET
         const getProfile = async () => {
             try {
                 const response = await axios.get(`${url}users/profile`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
                 console.log(response.data);
-
-                // setUsers(response.data);
+                setUser(response.data);
             } catch (error) {
                 console.error(error);
                 setError(error);
             }
-
-            // if (id === users.id) {
-            //     setSoloUser(users.name);
-            //     setUserCommunities(users.communities);
-            // }
         };
-        // LOAD API DATA ONTO SCREEN
-        // getProfile();
-    }, []); // [] = runs once + right away!
+        getProfile();
+    }, []);
+
+
+    useEffect(() => {
+        const getCommunities = async () => {
+            try {
+                const response = await axios.get(`${url}user-communities`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                console.log(response.data);
+                setCommunities(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
+        };
+        getCommunities();
+    }, []);
+
+    console.log(communities);
+
 
     return (
         <section className="profilepage">
-            <Profile />
-            <JoinedCommunities />
-            {/* ^^ axios request currently on JoinedCommunities */}
+            <Profile user={user} />
+            <JoinedCommunities communities={communities} />
         </section>
     )
 }
