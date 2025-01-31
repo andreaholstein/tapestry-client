@@ -1,0 +1,33 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.profile-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	padding: 16px;
+	background: $white;
+	border-radius: 12px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	text-align: center;
+
+	img {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+		font-weight: bold;
+		color: $grape;
+	}
+
+	p {
+		font-size: 0.9rem;
+		color: $blue;
+	}
+}

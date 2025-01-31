@@ -7,13 +7,13 @@ h1 {
   margin: 0;
   font-size: 52px;
   line-height: 2rem;
-  @include tablet {
-    // font-size: 40px;
-    // line-height: 40px;
-  }
+  // @include tablet {
+  // font-size: 60px;
+  // line-height: 70px;
+  // }
   @include desktop {
-    // font-size: 52px;
-    // line-height: 66px;
+    font-size: 60px;
+    line-height: 70px;
   }
 }
 
@@ -21,11 +21,13 @@ h2 {
   margin: 0;
   font-size: 32px;
   line-height: 2.375rem;
-  @include tablet {
-    font-size: 40px;
-    line-height: 40px;
-  }
+  // @include tablet {
+  // font-size: 40px;
+  // line-height: 40px;
+  // }
   @include desktop {
+    font-size: 54px;
+    line-height: 60px;
   }
 }
 
@@ -33,11 +35,13 @@ h3 {
   margin: 0;
   font-size: 20px;
   line-height: 1.4375rem;
-  @include tablet {
-    font-size: 24px;
-    line-height: 30px;
-  }
+  // @include tablet {
+  // font-size: 24px;
+  // line-height: 30px;
+  // }
   @include desktop {
+    font-size: 46px;
+    line-height: 50px;
   }
 }
 
@@ -45,11 +49,13 @@ h4 {
   margin: 0;
   font-size: 18px;
   line-height: 0.9375rem;
-  @include tablet {
-    font-size: 26px;
-    line-height: 2rem;
-  }
+  // @include tablet {
+  // font-size: 26px;
+  // line-height: 2rem;
+  // }
   @include desktop {
+    font-size: 46px;
+    line-height: 50px;
   }
 }
 
@@ -57,23 +63,56 @@ p {
   margin: 0;
   font-size: 16px;
   line-height: 15px;
-  @include tablet {
+  // @include tablet {
+  // font-size: 20px;
+  // line-height: 26px;
+  // }
+  @include desktop {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.p-mid {
+  margin: 0;
+  font-size: 16px;
+  line-height: 15px;
+  // @include tablet {
+  // font-size: 20px;
+  // line-height: 26px;
+  // }
+  @include desktop {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.p-sm {
+  margin: 0;
+  font-size: 16px;
+  line-height: 15px;
+  // @include tablet {
+  // font-size: 20px;
+  // line-height: 26px;
+  // }
+  @include desktop {
     font-size: 20px;
     line-height: 26px;
-  }
-  @include desktop {
   }
 }
 
 a {
   margin: 0;
-  font-size: 12px;
+  text-decoration: none;
+  font-size: 16px;
   line-height: 15px;
-  @include tablet {
-    font-size: 14px;
-    line-height: 17.5008px;
-  }
+  // @include tablet {
+  // font-size: 20px;
+  // line-height: 26px;
+  // }
   @include desktop {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 

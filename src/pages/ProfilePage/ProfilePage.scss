@@ -1,0 +1,12 @@
+// --------- FXNALITY ---------
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.profilepage {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $pale;
+}
