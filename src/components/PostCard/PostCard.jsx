@@ -5,15 +5,12 @@ const PostCard = ({ post }) => {
 		<div className="post-card">
 			<div className="post-header">
 				<img
-					src={
-						post.user?.profilePic ||
-						"https://via.placeholder.com/50"
-					}
-					alt={post.user?.name}
+					src={post.profile_picture || "https://via.placeholder.com/50"}
+					alt={post.username || "User"}
 				/>
 				<div className="user-info">
-					<h3>{post.user?.name || "Unknown User"}</h3>
-					<p>{post.timestamp || "Just now"}</p>
+					<h3>{post.first_name ? `${post.first_name} ${post.last_name}` : "Unknown User"}</h3>
+					<p>@{post.username || "unknown"}</p>
 				</div>
 			</div>
 			<p className="post-content">{post.post_text}</p>
