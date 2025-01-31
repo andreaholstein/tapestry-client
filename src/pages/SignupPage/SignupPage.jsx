@@ -1,6 +1,8 @@
+import SignupCard from "../../components/SignupCard/SignupCard";
+
 function SignupPage () {
     return(
-        <p>signup page</p>
+        <SignupCard/>
     )
 }
 

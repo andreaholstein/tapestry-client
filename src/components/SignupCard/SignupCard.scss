@@ -1,0 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.signup-card {
+    background-color: $berry;
+    margin: 1.5rem;
+    width: 55%;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    color: white;
+    @include flex-column;
+    align-items: center;
+
+    &__heading {
+        margin: 0;
+    }
+
+    &__slogan {
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    &__text {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+        text-align: center;
+        font-weight: 300;
+    }
+}
