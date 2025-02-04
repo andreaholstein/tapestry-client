@@ -2,7 +2,7 @@
 // -------------- STYLES --------------
 import './SoloCommCard.scss'
 
-function SoloCommCard(community) {
+function SoloCommCard({ community }) {
 
     return (
         <div className="community">
@@ -10,7 +10,6 @@ function SoloCommCard(community) {
                 <img src={community.photo} alt={community.alt} className="community__image" />
                 <div className="community__text">
                     <h2 className="community__title">{community.title}</h2>
-                    {/* <p className="community__topic">{community.topic}</p> */}
                 </div>
             </div>
         </div>
