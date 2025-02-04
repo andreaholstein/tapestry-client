@@ -9,6 +9,7 @@ import Header from './components/Header/Header'
 // -------------- STYLES --------------
 import './App.scss'
 import SignupPage from './pages/SignupPage/SignupPage'
+import LoginPage from './pages/LoginPage/LoginPage'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignupPage/>} />
+          <Route path='/login' element={<LoginPage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
           {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/profile" element={<ProfilePage />} />

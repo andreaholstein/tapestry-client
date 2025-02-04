@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { baseURL } from "../../utils/api";
+import axios from "axios";
 import "./SignupForm.scss";
 
 function SignupForm() {
@@ -23,10 +25,62 @@ function SignupForm() {
     }
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    Object.keys(formData).forEach((key) => {
+      if (!formData[key]) {
+        newErrors[key] = "This field is required";
+      }
+    });
+
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    if (formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email =
+        "The email address is not valid. Expected format: x@x.xx";
+    }
+
+    if (formData.password !== formData.confirm_password) {
+      newErrors.confirm_password = "Passwords do not match";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const url = `${baseURL}/users/register`;
+
+    if (!validateForm()) {
+      console.log("validation failed:", errors);
+      return;
+    }
+    try {
+      await axios.post(url, {
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+      });
+      setSuccess(true);
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+    } catch (error) {
+      console.error(error);
+    }
+  };    
+
   return (
     <article className="signup-form">
       <h1 className="signup-form__title">Sign up today!</h1>
-      <form action="" className="signup-form__form">
+      <form action="" className="signup-form__form" onSubmit={handleSubmit}>
         {[
           { label: "First Name", name: "first_name" },
           { label: "Last Name", name: "last_name" },
