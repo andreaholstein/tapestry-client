@@ -17,10 +17,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route
-            path="/"
-            element={<HomePage url={url} authToken={authToken} />}
-          />
+          <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
           {/* <Route path="/community/:communityId/posts" element={<PostsForm />} /> */}
