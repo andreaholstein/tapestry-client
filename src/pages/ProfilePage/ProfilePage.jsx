@@ -7,9 +7,10 @@ import JoinedCommunities from '../../components/JoinedCommunities/JoinedCommunit
 // -------------- STYLES --------------
 import './ProfilePage.scss'
 
-function ProfilePage({ url, authToken }) {
+function ProfilePage() {
 
-    // const url = import.meta.env.VITE_API_URL;
+    const url = import.meta.env.VITE_API_URL;
+    const authToken = localStorage.getItem("authToken");
 
     const [user, setUser] = useState(null);
     const [communities, setCommunities] = useState([]);
@@ -21,7 +22,7 @@ function ProfilePage({ url, authToken }) {
                 const response = await axios.get(`${url}users/profile`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                console.log(response.data);
+                console.log("ResU: ", response.data);
                 setUser(response.data);
             } catch (error) {
                 console.error(error);
@@ -37,7 +38,7 @@ function ProfilePage({ url, authToken }) {
                 const response = await axios.get(`${url}user-communities`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                console.log(response.data);
+                console.log("ResC: ", response.data);
                 setCommunities(response.data);
             } catch (error) {
                 console.error(error);
@@ -46,6 +47,9 @@ function ProfilePage({ url, authToken }) {
         };
         getCommunities();
     }, []);
+
+    console.log("User: ", user);
+    console.log("UserComms: ", communities);
 
     return (
         <section className="profilepage">
