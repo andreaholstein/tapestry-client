@@ -25,7 +25,7 @@ function SignupForm() {
 
   return (
     <article className="signup-form">
-      <h1 className="signup-form__title">Sign up</h1>
+      <h1 className="signup-form__title">Sign up today!</h1>
       <form action="" className="signup-form__form">
         {[
           { label: "First Name", name: "first_name" },
