@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage/HomePage";
 import CommunityPage from "./pages/CommunityPage/CommunityPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import PostsForm from "./components/PostsForm/PostsForm";
 // -------------- COMPONENTS --------------
 import Header from "./components/Header/Header";
 // -------------- STYLES --------------
@@ -19,7 +20,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
-          <Route path="/posts" element={<PostsPage />} />
+          {/* <Route path="/community/:communityId/posts" element={<PostsForm />} /> */}
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>

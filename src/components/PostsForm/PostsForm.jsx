@@ -1,4 +1,3 @@
-// -------------- STYLES --------------
 import "./PostsForm.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -6,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function PostsForm() {
   const url = import.meta.env.VITE_API_URL;
-  const { communityId } = useParams();
+  const { id: communityId } = useParams();
   const navigate = useNavigate();
   const [postText, setPostText] = useState("");
   const [postMedia, setPostMedia] = useState(null);
@@ -14,6 +13,7 @@ function PostsForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const userToken = localStorage.getItem("authToken");
+  const userId = localStorage.getItem("userId");
 
   useEffect(() => {
     if (!userToken) {
@@ -23,28 +23,51 @@ function PostsForm() {
 
     if (!communityId) {
       setError("No community selected");
+      return;
     }
   }, [userToken, communityId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!userToken || !communityId) {
       setError("User or community not found");
       return;
     }
 
-    setIsSubmitting(true);
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      setError("User ID not found. Please log in.");
+      return;
+    }
+
+    console.log("User ID:", userId);
+
     const formData = new FormData();
     formData.append("post_text", postText);
     formData.append("community_id", communityId);
+    formData.append("user_id", userId);
     if (postMedia) formData.append("post_media", postMedia);
 
-    try {
-      const response = await axios.post(`${url}/posts`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+    for (let [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
 
-      if (response.status === 200) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/posts",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${userToken}`,
+          },
+        }
+      );
+
+      if (response.status === 201) {
         setPostText("");
         setPostMedia(null);
         setError("");
@@ -52,62 +75,57 @@ function PostsForm() {
         navigate(`/community/${communityId}`);
       }
     } catch (error) {
-      console.error("Error posting data:", error);
-      setError("An error occurred while submitting the post.");
-    } finally {
-      setIsSubmitting(false);
+      console.error("Full Error Details:", error.response?.data);
+      setError(
+        error.response?.data?.details ||
+          error.response?.data?.error ||
+          "An error occurred while submitting the post."
+      );
     }
   };
 
   return (
     <section className="post">
       <div className="post__form">
-        <h2 className="post__title">Create Post</h2>
-        {error && <p className="post__error">{error}</p>}
         <form onSubmit={handleSubmit} className="post__form-content">
-          <div className="post__form-field">
-            <label htmlFor="postText" className="post__form-label">
-              Post Text
-            </label>
+          <div className="post__form-textbar">
             <textarea
               id="postText"
               value={postText}
               onChange={(e) => setPostText(e.target.value)}
+              placeholder="Post something..."
               required
               className="post__form-textarea"
             ></textarea>
-          </div>
 
-          <div className="post__form-field">
-            <label className="post__form-label">Community</label>
-            <p className="post__community-info">
-              {communityId
-                ? `Posting in Community ID: ${communityId}`
-                : "Loading..."}
-            </p>
-          </div>
+            {/* Upload Media Button */}
+            <div className="post__form-file-container">
+              <input
+                type="file"
+                id="postMedia"
+                accept="image/*,video/*"
+                onChange={(e) => setPostMedia(e.target.files[0])}
+                className="post__form-file-input"
+              />
+            </div>
 
-          <div className="post__form-field">
-            <label htmlFor="postMedia" className="post__form-label">
-              Post Media
-            </label>
-            <input
-              type="file"
-              id="postMedia"
-              accept="image/*,video/*"
-              onChange={(e) => setPostMedia(e.target.files[0])}
-              className="post__form-file-input"
-            />
-          </div>
+            {/* GIF Button */}
+            <button type="button" className="post__gif-button">
+              GIF
+            </button>
 
-          <button
-            type="submit"
-            disabled={isSubmitting || !communityId}
-            className="post__submit-button"
-          >
-            {isSubmitting ? "Submitting..." : "Submit Post"}
-          </button>
+            {/* Submit Post Button */}
+            <button
+              type="submit"
+              disabled={isSubmitting || !postText}
+              className="post__submit-button"
+            >
+              {isSubmitting ? "Submitting..." : "Post"}
+            </button>
+          </div>
         </form>
+
+        {error && <p className="post__error">{error}</p>}
       </div>
     </section>
   );
