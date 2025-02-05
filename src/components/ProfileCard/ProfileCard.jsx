@@ -12,7 +12,14 @@ const ProfileCard = ({ user }) => {
 
   return (
     <div className="profile-card">
-      <img src={displayUser.profile_picture} alt={displayUser.username} />
+      <img
+        src={
+          displayUser.profile_picture
+            ? `http://localhost:8080/${displayUser.profile_picture}`
+            : "https://via.placeholder.com/150"
+        }
+        alt={displayUser.username || "User"}
+      />
       <h2>{`${displayUser.first_name} ${displayUser.last_name}`}</h2>
       <p>@{displayUser.username}</p>
     </div>
