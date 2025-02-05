@@ -42,7 +42,11 @@ const PostCard = ({ post }) => {
     <div className="post-card">
       <div className="post-header">
         <img
-          src={postAuthor?.profile_picture || "https://via.placeholder.com/50"}
+          src={
+            postAuthor?.profile_picture
+              ? `http://localhost:8080/${postAuthor.profile_picture}`
+              : "https://via.placeholder.com/50"
+          }
           alt={postAuthor?.username || "User"}
         />
         <div className="user-info">
