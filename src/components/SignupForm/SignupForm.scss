@@ -1,0 +1,60 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.signup-form {
+  padding: 0rem 5rem;
+  width: 40%;
+  align-self: center;
+
+  &__title {
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  &__link {
+    font-weight: 600;
+    @include reset-link-styling;
+    color: $blue;
+  }
+
+  &__label {
+    font-weight: 500;
+    color: $grape;
+    margin-bottom: 0.25rem;
+    font-size: 0.813rem;
+    margin-top: 1.5rem;
+  }
+
+  &__input {
+    @include input-box;
+    width: 100%;
+  }
+
+  &__button {
+    @include primary-button;
+    width: 100%;
+    margin-top: 2.5rem;
+  }
+
+  &__error {
+    margin: 0.25rem 0;
+    font-size: 0.813rem;
+    &-message {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  &__success {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
