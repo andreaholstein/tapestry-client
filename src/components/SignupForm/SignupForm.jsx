@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { baseURL } from "../../utils/api";
 import axios from "axios";
 import "./SignupForm.scss";
@@ -80,6 +80,7 @@ function SignupForm() {
   return (
     <article className="signup-form">
       <h1 className="signup-form__title">Sign up today!</h1>
+      <p className="signup-form__text">Already have an account? <Link to={"/login"} className="signup-form__link">Log in</Link></p>
       <form action="" className="signup-form__form" onSubmit={handleSubmit}>
         {[
           { label: "First Name", name: "first_name" },
