@@ -1,7 +1,13 @@
-function LoginPage () {
-    return(
-        <p>Login Page</p>
-    )
+import LoginCard from "../../components/LoginCard/LoginCard";
+import LoginForm from "../../components/LoginForm/LoginForm";
+
+function LoginPage() {
+  return (
+    <>
+      <LoginForm />
+      <LoginCard />
+    </>
+  );
 }
 
 export default LoginPage;
