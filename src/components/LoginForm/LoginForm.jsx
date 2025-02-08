@@ -2,6 +2,7 @@ import { useState } from "react";
 import { baseURL } from "../../utils/api";
 import axios from "axios";
 import { Link, useNavigate } from "react-router";
+import errorIcon from "../../assets/icons/error-icon.svg"
 import "./LoginForm.scss";
 
 function LoginForm() {
@@ -26,7 +27,7 @@ function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `${baseURL}/user/login`;
+    const url = `${baseURL}/users/login`;
 
     const newErrors = {};
 
@@ -50,14 +51,14 @@ function LoginForm() {
     console.log("Form submitted", formData);
 
     try {
-      const { data } = await axios.post(`${baseURL}/users/login`, {
+      const { data } = await axios.post(url, {
         email: formData.email,
         password: formData.password,
       });
 
       localStorage.setItem("authToken", data.authToken);
 
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       if (error.response && error.response.data.message) {
         setErrors({ formError: error.response.data.message });
@@ -72,7 +73,7 @@ function LoginForm() {
 
   return (
     <article className="login-form">
-      <h1 className="login-form__title">Login here!</h1>
+      <h1 className="login-form__title">Login here</h1>
       <p className="login-form__text">
         Don't have an account?{" "}
         <Link to={"/signup"} className="signup-form__link">

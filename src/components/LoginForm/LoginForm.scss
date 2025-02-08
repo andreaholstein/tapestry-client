@@ -9,13 +9,11 @@
   &__title {
     font-weight: 500;
     margin: 0;
-    
   }
 
   &__text {
     margin-bottom: 2rem;
     margin-top: 0.5rem;
-    
   }
 
   &__link {
@@ -41,5 +39,22 @@
     @include primary-button;
     width: 100%;
     margin-top: 21rem;
+  }
+
+  &__error {
+    margin: 0.25rem 0;
+    font-size: 0.813rem;
+    &-message {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  &__success {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
   }
 }
