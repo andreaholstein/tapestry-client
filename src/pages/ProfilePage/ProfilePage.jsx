@@ -22,7 +22,7 @@ function ProfilePage() {
                 const response = await axios.get(`${url}users/profile`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                console.log("ResU: ", response.data);
+                // console.log("ResU: ", response.data);
                 setUser(response.data);
             } catch (error) {
                 console.error(error);
@@ -38,7 +38,7 @@ function ProfilePage() {
                 const response = await axios.get(`${url}user-communities`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                console.log("ResC: ", response.data);
+                // console.log("ResC: ", response.data);
                 setCommunities(response.data);
             } catch (error) {
                 console.error(error);

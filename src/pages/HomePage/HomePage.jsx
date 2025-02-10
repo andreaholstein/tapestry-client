@@ -28,11 +28,6 @@ function HomePage() {
                 console.error(error);
                 setError(error);
             }
-
-            // if (user_id === users[0].id) {
-            //     setSoloUser(users.name);
-            //     // setUserCommunities(users.communities);
-            // }
         };
         getUser();
     }, []);

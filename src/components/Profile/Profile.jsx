@@ -12,7 +12,7 @@ function Profile({ user }) {
     return (
         <section className="profile">
             <div className="profile__wrap">
-                {/* <img src={user.profile_picture} alt="Broken Image" className="profile__avatar" /> */}
+                <img className="profile__avatar" src={user.profile_picture} alt={`Image of ${user.username}`} />
                 <h3 className="profile__name">{user.first_name} {user.last_name}</h3>
                 <p className="profile__bio">Lorem, ipsum. Lorem, ipsum.</p>
             </div>

@@ -4,7 +4,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .welcome {
-  // margin: 3rem 1rem;
+  margin: none;
   padding: 1rem;
   height: 10rem;
   background-color: $white;
@@ -36,6 +36,7 @@
   }
 
   &__greeting {
+    margin: none;
     padding: 0 0 2rem 0rem;
   }
 
