@@ -3,6 +3,14 @@
 import './Profile.scss'
 
 function Profile({ user }) {
+    const placeholderUser = {
+        first_name: "Community",
+        last_name: "Member",
+        username: "member",
+        profile_picture: "https://via.placeholder.com/80",
+    };
+
+    const displayUser = user || placeholderUser;
 
     if (!user) {
         return <>"Loading User"</>;
@@ -12,8 +20,14 @@ function Profile({ user }) {
     return (
         <section className="profile">
             <div className="profile__wrap">
-                <img className="profile__avatar" src={user.profile_picture} alt={`Image of ${user.username}`} />
-                <h3 className="profile__name">{user.first_name} {user.last_name}</h3>
+                <img className="profile__avatar" src={
+                    displayUser.profile_picture
+                        ? `http://localhost:8080/${displayUser.profile_picture}`
+                        : "https://via.placeholder.com/150"
+                }
+                    alt={displayUser.username || "User"}
+                />
+                <h3 className="profile__name">{displayUser.first_name} {displayUser.last_name}</h3>
                 <p className="profile__bio">Lorem, ipsum. Lorem, ipsum.</p>
             </div>
         </section>

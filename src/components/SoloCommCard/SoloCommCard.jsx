@@ -4,6 +4,12 @@ import './SoloCommCard.scss'
 
 function SoloCommCard({ community }) {
 
+    if (!community) {
+        return <>"Loading Community"</>;
+    }
+
+    // need to seed community to have a photo
+
     return (
         <div className="community">
             <div className="community__wrap">
