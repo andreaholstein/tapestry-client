@@ -47,9 +47,6 @@ function HomePage() {
         getUserCommunities();
     }, []);
 
-    // console.log("User: ", soloUser);
-    // console.log("UserComms: ", userCommunities);
-
     return (
         <section className="homepage">
             <Welcome user={soloUser} communities={userCommunities} />

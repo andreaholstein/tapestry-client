@@ -22,7 +22,6 @@ function ProfilePage() {
                 const response = await axios.get(`${url}users/profile`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                // console.log("ResU: ", response.data);
                 setUser(response.data);
             } catch (error) {
                 console.error(error);
@@ -38,7 +37,6 @@ function ProfilePage() {
                 const response = await axios.get(`${url}user-communities`, {
                     headers: { Authorization: `Bearer ${authToken}` },
                 });
-                // console.log("ResC: ", response.data);
                 setCommunities(response.data);
             } catch (error) {
                 console.error(error);
@@ -53,8 +51,12 @@ function ProfilePage() {
 
     return (
         <section className="profilepage">
-            <Profile user={user} />
-            <JoinedCommunities communities={communities} />
+            <div className="profilepage__section profilepage__section--left">
+                <Profile user={user} />
+            </div>
+            <div className="profilepage__section profilepage__section--right">
+                <JoinedCommunities communities={communities} />
+            </div>
         </section>
     )
 }
