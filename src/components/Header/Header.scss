@@ -5,6 +5,7 @@
 
 .header {
   background-color: $berry;
+  box-sizing: border-box;
 
   &__nav {
     padding: 2rem;
@@ -16,5 +17,10 @@
   &__logo,
   &__profile-icon {
     color: $pale;
+  }
+
+  &__profile-icon {
+    width: 8rem;
+    height: 8rem;
   }
 }

@@ -13,13 +13,11 @@ function Header() {
         <section className="header">
           <nav className="header__nav">
             <Link to="/">
-              <h1 className="header__logo">LOGO</h1>
+              <h1 className="header__logo">tapestry</h1>
             </Link>
             <Link to="/profile">
-              <button className="header__profile-button">PROFILE</button>
-              {/* <svg className="header__profile-icon"></svg> */}
+              <svg src="client/src/assets/icons/profile-icon.svg" className="header__profile-icon"></svg>
             </Link>
-            {/* alt: can use onClick + useNavigate */}
           </nav>
         </section>
       )}
