@@ -1,49 +1,37 @@
 @use "./_mixins" as *;
-
-@font-face {
-  font-family: "Montserrat";
-  src: url(../../assets/fonts/Montserrat-Regular.woff) format("woff"), url(../../assets/fonts/Montserrat-Regular.woff2) format("woff2");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url(../../assets/fonts/Montserrat-Light.woff) format("woff"), url(../../assets/fonts/Montserrat-Light.woff2) format("woff2");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url(../../assets/fonts/Montserrat-Medium.woff) format("woff"), url(../../assets/fonts/Montserrat-Medium.woff2) format("woff2");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url(../../assets/fonts/Montserrat-SemiBold.woff) format("woff"), url(../../assets/fonts/Montserrat-SemiBold.woff2) format("woff2");
-  font-weight: 600;
-}
+@use "./_fonts" as *;
 
 h1 {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 3.5rem;
+  margin: 0;
 }
 
 h2 {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 2.875rem;
+  margin: 0;
 }
 
 h3 {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 1.875rem;
+  margin: 0;
+}
+
+h4 {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 p {
   font-family: "Montserrat";
   font-weight: 400;
   font-size: 1rem;
+  margin: 0;
 }

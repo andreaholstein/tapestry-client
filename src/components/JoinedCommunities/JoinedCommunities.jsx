@@ -9,6 +9,10 @@ import './JoinedCommunities.scss'
 
 function JoinedCommunities({ communities }) {
 
+    if (!communities) {
+        return <>"Loading Communities"</>;
+    }
+
     return (
         <section className="joined">
             {communities.map((community) => {

@@ -5,8 +5,22 @@
 
 .profilepage {
   padding: 2rem;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: $pale;
+
+  &__section {
+    width: 50%;
+    height: inherit;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__section--right {
+    height: inherit;
+  }
 }
