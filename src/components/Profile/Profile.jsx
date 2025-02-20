@@ -4,9 +4,9 @@ import './Profile.scss'
 
 function Profile({ user }) {
     const placeholderUser = {
-        first_name: "Community",
-        last_name: "Member",
-        username: "member",
+        first_name: "@",
+        last_name: "User",
+        username: "@user",
         profile_picture: "https://via.placeholder.com/80",
     };
 
