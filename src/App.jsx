@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import PostsForm from "./components/PostsForm/PostsForm";
 // -------------- COMPONENTS --------------
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer"
 // -------------- STYLES --------------
 import './App.scss'
 import SignupPage from './pages/SignupPage/SignupPage'
@@ -19,12 +20,13 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/signup" element={<SignupPage/>} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
           {/* <Route path="/community/:communityId/posts" element={<PostsForm />} /> */}
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

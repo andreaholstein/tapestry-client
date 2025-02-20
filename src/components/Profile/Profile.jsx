@@ -22,7 +22,9 @@ function Profile({ user }) {
         <section className="profile">
             <div className="profile__wrap">
                 <div className="profile__img-wrap">
-                    <Star />
+                    <div className="profile__shrink">
+                        <Star />
+                    </div>
                     <img className="profile__avatar" src={
                         displayUser.profile_picture
                             ? `http://localhost:8080/${displayUser.profile_picture}`
@@ -30,7 +32,9 @@ function Profile({ user }) {
                     }
                         alt={displayUser.username || "User"}
                     />
-                    <Star />
+                    <div className="profile__shrink">
+                        <Star />
+                    </div>
                 </div>
                 <h3 className="profile__name">{displayUser.first_name} {displayUser.last_name}</h3>
                 <h4 className="profile__username">@{displayUser.username}</h4>

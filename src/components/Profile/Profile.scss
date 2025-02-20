@@ -19,10 +19,19 @@
     box-sizing: border-box;
   }
 
+  &__img-wrap {
+    display: flex;
+  }
+
+  &__shrink {
+    z-index: 2;
+    align-self: flex-end;
+  }
+
   &__avatar {
     margin: 2rem 0 1rem 0;
-    height: 22.75rem;
-    width: 22.75rem;
+    height: 15rem;
+    width: 15rem;
     border: 0.5rem solid $sky;
     border-radius: 12.5rem;
   }
