@@ -3,29 +3,34 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-footer {
-  padding: 2rem 1rem;
-  height: 12rem;
+.footer {
+  padding: 4rem 1rem 2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
   background-color: $berry;
   color: $pale;
-
-  &__our-team {
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+  box-sizing: border-box;
 
   &__teammate {
-    background-color: aqua; // not working
+    padding: 0 1rem;
+    width: 20%;
   }
 
-  //   &__links-wrap {
-  //   }
+  &__teammate-item {
+    padding: 0.25rem 0.5rem 0 0;
+  }
 
-  //   &__link {
-  //   }
+  &__teammate-name {
+    font-weight: bold;
+  }
 
-  //   &__links {
-  //   }
+  &__links-wrap {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__links {
+    padding: 0.5rem 0.5rem 0 0;
+  }
 }
