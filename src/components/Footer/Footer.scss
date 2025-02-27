@@ -1,0 +1,36 @@
+// --------- FXNALITY ---------
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+  padding: 4rem 1rem 2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background-color: $berry;
+  color: $pale;
+  box-sizing: border-box;
+
+  &__teammate {
+    padding: 0 1rem;
+    width: 20%;
+  }
+
+  &__teammate-item {
+    padding: 0.25rem 0.5rem 0 0;
+  }
+
+  &__teammate-name {
+    font-weight: bold;
+  }
+
+  &__links-wrap {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__links {
+    padding: 0.5rem 0.5rem 0 0;
+  }
+}

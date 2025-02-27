@@ -14,7 +14,7 @@ function CommunityCards({ communities }) {
       {communities.map((community) => {
         return (
           <Link
-            to={`path to community`}
+            to={`/community/${community.id}`}
             key={community.id}
             className="community-card__link"
           >
@@ -22,7 +22,7 @@ function CommunityCards({ communities }) {
           </Link>
         );
       })}
-    </section>
+    </section >
   );
 }
 

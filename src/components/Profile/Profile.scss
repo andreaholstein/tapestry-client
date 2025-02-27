@@ -19,10 +19,19 @@
     box-sizing: border-box;
   }
 
+  &__img-wrap {
+    display: flex;
+  }
+
+  &__shrink {
+    z-index: 2;
+    align-self: flex-end;
+  }
+
   &__avatar {
     margin: 2rem 0 1rem 0;
-    height: 22.75rem;
-    width: 22.75rem;
+    height: 15rem;
+    width: 15rem;
     border: 0.5rem solid $sky;
     border-radius: 12.5rem;
   }
@@ -45,3 +54,28 @@
     border-radius: 0 0 1.25rem 3.125rem;
   }
 }
+
+// .loading {
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   color: $berry;
+
+//   &__wheel {
+//     width: 2rem;
+//     height: 2rem;
+//     margin-right: 0.75rem;
+//     animation-name: spin;
+//     animation-duration: 4000ms;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: linear;
+//   }
+//   @keyframes spin {
+//     from {
+//       transform: rotate(0deg);
+//     }
+//     to {
+//       transform: rotate(360deg);
+//     }
+//   }
+// }

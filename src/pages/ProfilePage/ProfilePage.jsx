@@ -46,9 +46,6 @@ function ProfilePage() {
         getCommunities();
     }, []);
 
-    console.log("User: ", user);
-    console.log("UserComms: ", communities);
-
     return (
         <section className="profilepage">
             <div className="profilepage__section profilepage__section--left">
