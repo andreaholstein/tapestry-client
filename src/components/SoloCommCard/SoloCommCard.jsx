@@ -7,13 +7,12 @@ function SoloCommCard({ community }) {
     if (!community) {
         return <>"Loading Community"</>;
     }
-
-    // need to seed community to have a photo
+    console.log(community);
 
     return (
         <div className="community">
             <div className="community__wrap">
-                <img src={community.image} alt={community.alt_text} className="community__image" />
+                <img className="community__photo" src={community.photo} alt={community.alt_text} />
                 <div className="community__text">
                     <h2 className="community__title">{community.title}</h2>
                 </div>

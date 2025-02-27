@@ -17,18 +17,15 @@ footer {
   }
 
   &__teammate {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    background-color: aqua; // not working
   }
 
-  &__links-wrap {
-    display: flex;
-  }
+  //   &__links-wrap {
+  //   }
 
-  &__links {
-    width: 50%;
-    display: flex;
-  }
+  //   &__link {
+  //   }
+
+  //   &__links {
+  //   }
 }
