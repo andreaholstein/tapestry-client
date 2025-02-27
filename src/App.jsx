@@ -7,11 +7,12 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import PostsForm from "./components/PostsForm/PostsForm";
 // -------------- COMPONENTS --------------
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer";
 // -------------- STYLES --------------
-import './App.scss'
-import SignupPage from './pages/SignupPage/SignupPage'
-import LoginPage from './pages/LoginPage/LoginPage'
+import "./styles/global.scss";
+import './App.scss';
+import SignupPage from './pages/SignupPage/SignupPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
   return (
