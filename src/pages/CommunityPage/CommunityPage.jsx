@@ -53,7 +53,7 @@ const CommunityPage = () => {
     fetchCommunityData();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading ... </p>
   if (!community) return <p>Community not found.</p>;
 
   return (
