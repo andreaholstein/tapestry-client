@@ -18,7 +18,8 @@ function JoinedCommunities({ communities }) {
             {communities.map((community) => {
                 return (
                     <Link
-                        to={`path to community`}
+                        to={`/community/${community.id}`}
+                        key={community.id}
                         className="joined__link"
                     >
                         <SoloCommCard community={community} key={community.community_id} />

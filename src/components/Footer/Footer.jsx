@@ -11,7 +11,7 @@ function Footer() {
                     <h4 className="footer__teammate-name">Andrea Holstein</h4>
                 </li>
                 <li className="footer__teammate-item">
-                    <h4 className="footer__teammate-position"> Full-stack Developer | Digital Strategist</h4>
+                    <h4 className="footer__teammate-position"> Product Owner | Full-stack Developer</h4>
                 </li>
                 <li className="footer__teammate-item">
                     <div className="footer__links-wrap">
