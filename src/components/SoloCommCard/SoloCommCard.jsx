@@ -13,12 +13,10 @@ function SoloCommCard({ community }) {
         </div>
     }
 
-    console.log(community);
-
     return (
         <div className="community">
             <div className="community__wrap">
-                <img className="community__photo" src={community.photo} alt={community.alt_text} />
+                <img className="community__photo" src={`http://localhost:8080/${community.photo}`} alt={community.alt_text} />
                 <div className="community__text">
                     <h2 className="community__title">{community.title}</h2>
                 </div>
