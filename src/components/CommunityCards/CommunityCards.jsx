@@ -37,7 +37,7 @@ function CommunityCards({ communities }) {
           <Link
             to={`/community/${community.id}`}
             key={community.id}
-            className="community-card__link"
+            className="community-cards__link"
           >
             <SoloCommCard community={community} />
           </Link>
