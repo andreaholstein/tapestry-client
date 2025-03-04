@@ -3,7 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-function PostsForm() {
+function PostsForm({ refreshPosts }) {
+  // receive the callback prop
   const url = import.meta.env.VITE_API_URL;
   const { id: communityId } = useParams();
   const navigate = useNavigate();
@@ -20,7 +21,6 @@ function PostsForm() {
       setError("User is not logged in");
       return;
     }
-
     if (!communityId) {
       setError("No community selected");
       return;
@@ -41,46 +41,45 @@ function PostsForm() {
       return;
     }
 
-    console.log("User ID:", userId);
-
     const formData = new FormData();
     formData.append("post_text", postText);
     formData.append("community_id", communityId);
     formData.append("user_id", userId);
     if (postMedia) formData.append("post_media", postMedia);
 
-    for (let [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/posts",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${userToken}`,
-          },
-        }
-      );
+      const response = await axios.post(`${url}posts`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${userToken}`,
+        },
+      });
 
       if (response.status === 201) {
         setPostText("");
         setPostMedia(null);
         setError("");
         alert("Post submitted successfully!");
+
+        // Call the callback to refresh posts
+        if (refreshPosts) {
+          refreshPosts();
+        }
+
+        // Optionally navigate if needed:
         navigate(`/community/${communityId}`);
       }
     } catch (error) {
-      console.error("Full Error Details:", error.response?.data);
+      console.error("Complete Error Object:", error);
       setError(
         error.response?.data?.details ||
           error.response?.data?.error ||
           "An error occurred while submitting the post."
       );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -124,7 +123,6 @@ function PostsForm() {
             </button>
           </div>
         </form>
-
         {error && <p className="post__error">{error}</p>}
       </div>
     </section>
