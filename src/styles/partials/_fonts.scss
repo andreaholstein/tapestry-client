@@ -1,53 +1,27 @@
 @font-face {
-    font-family: "Montserrat";
-    src: url(../../assets/fonts/Montserrat-Regular.woff) format("woff"), url(../../assets/fonts/Montserrat-Regular.woff2) format("woff2");
-    font-weight: 400;
-  }
-  
-  @font-face {
-    font-family: "Montserrat";
-    src: url(../../assets/fonts/Montserrat-Light.woff) format("woff"), url(../../assets/fonts/Montserrat-Light.woff2) format("woff2");
-    font-weight: 300;
-  }
-  
-  @font-face {
-    font-family: "Montserrat";
-    src: url(../../assets/fonts/Montserrat-Medium.woff) format("woff"), url(../../assets/fonts/Montserrat-Medium.woff2) format("woff2");
-    font-weight: 500;
-  }
-  
-  @font-face {
-    font-family: "Montserrat";
-    src: url(../../assets/fonts/Montserrat-SemiBold.woff) format("woff"), url(../../assets/fonts/Montserrat-SemiBold.woff2) format("woff2");
-    font-weight: 600;
-  }
-  
-  h1 {
-    font-family: "Montserrat";
-    font-weight: 500;
-    font-size: 3.75rem;
-  }
-  
-  h2 {
-    font-family: "Montserrat";
-    font-weight: 500;
-    font-size: 2.875rem;
-  }
-  
-  h3 {
-    font-family: "Montserrat";
-    font-weight: 500;
-    font-size: 1.875rem;
-  }
-  
-  p {
-    font-family: "Montserrat";
-    font-weight: 400;
-    font-size: 1rem;
-  }
+  font-family: "Montserrat";
+  src: url(../../assets/fonts/Montserrat-Regular.woff) format("woff"),
+    url(../../assets/fonts/Montserrat-Regular.woff2) format("woff2");
+  font-weight: 400;
+}
 
-  li {
-    font-family: "Montserrat";
-    font-weight: 300;
-    font-size: 1.1rem;
-  }
+@font-face {
+  font-family: "Montserrat";
+  src: url(../../assets/fonts/Montserrat-Light.woff) format("woff"),
+    url(../../assets/fonts/Montserrat-Light.woff2) format("woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../../assets/fonts/Montserrat-Medium.woff) format("woff"),
+    url(../../assets/fonts/Montserrat-Medium.woff2) format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../../assets/fonts/Montserrat-SemiBold.woff) format("woff"),
+    url(../../assets/fonts/Montserrat-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+}

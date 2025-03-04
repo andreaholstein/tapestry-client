@@ -5,6 +5,7 @@
 
 .header {
   background-color: $berry;
+  box-sizing: border-box;
 
   &__nav {
     padding: 2rem;

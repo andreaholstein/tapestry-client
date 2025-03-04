@@ -4,14 +4,12 @@
 @use "../../styles/partials/mixins" as *;
 
 .welcome {
-  // margin: 3rem 1rem;
-  padding: 1rem;
-  height: 10rem;
+  margin: none;
+  height: max-content;
+  display: flex;
   background-color: $white;
   border: 0.45rem solid $blue;
   border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
 
   &__wrap {
     width: 100%;
@@ -23,8 +21,51 @@
   &__graphics {
     width: 20%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  &__graphics--right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__graphics--snug-wrap {
+    height: 6rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__graphics--L-big-star {
+    width: max-content;
+    align-self: flex-start;
+  }
+
+  &__graphics--L-star {
+    width: max-content;
+    align-self: center;
+  }
+
+  &__graphics--heart {
+    width: max-content;
+    align-self: flex-start;
+  }
+
+  &__graphics--music {
+    width: max-content;
+    align-self: flex-end;
+  }
+
+  &__graphics--R-star {
+    width: max-content;
+    align-self: flex-start;
+  }
+
+  &__graphics--donut {
+    width: max-content;
+    align-self: flex-end;
   }
 
   &__text-wrap {
@@ -36,6 +77,7 @@
   }
 
   &__greeting {
+    margin: none;
     padding: 0 0 2rem 0rem;
   }
 

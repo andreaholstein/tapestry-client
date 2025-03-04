@@ -7,61 +7,55 @@ import JoinedCommunities from "../../components/JoinedCommunities/JoinedCommunit
 // -------------- STYLES --------------
 import "./ProfilePage.scss";
 
-function ProfilePage({ authToken }) {
-  const [user, setUser] = useState(null);
-  const [communities, setCommunities] = useState([]);
-  const [error, setError] = useState(null);
-  const url = import.meta.env.VITE_API_URL;
+function ProfilePage() {
 
+    const url = import.meta.env.VITE_API_URL;
+    const authToken = localStorage.getItem("authToken");
 
-  useEffect(() => {
-    const getProfile = async () => {
-      try {
-        const response = await axios.get(`${url}users/profile`, {
-          headers: { Authorization: `Bearer ${authToken}` },
-        });
-        console.log("User Data:", response.data);
-        setUser(response.data);
-      } catch (error) {
-        console.error("Error fetching user profile:", error);
-        setError(error);
-      }
-    };
-    getProfile();
-  }, [url, authToken]);
+    const [user, setUser] = useState(null);
+    const [communities, setCommunities] = useState([]);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const getCommunities = async () => {
-      try {
-        const response = await axios.get(`${url}user-communities`, {
-          headers: { Authorization: `Bearer ${authToken}` },
-        });
+    useEffect(() => {
+        const getProfile = async () => {
+            try {
+                const response = await axios.get(`${url}users/profile`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                setUser(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
+        };
+        getProfile();
+    }, []);
 
-        if (Array.isArray(response.data)) {
-          setCommunities(response.data);
-        } else {
-          console.error("Expected an array but got:", response.data);
-          setCommunities([]);
-        }
-      } catch (error) {
-        console.error("Error fetching user communities:", error);
-        setError(error);
-        setCommunities([]); 
-      }
-    };
-    getCommunities();
-  }, [url, authToken]);
+    useEffect(() => {
+        const getCommunities = async () => {
+            try {
+                const response = await axios.get(`${url}user-communities`, {
+                    headers: { Authorization: `Bearer ${authToken}` },
+                });
+                setCommunities(response.data);
+            } catch (error) {
+                console.error(error);
+                setError(error);
+            }
+        };
+        getCommunities();
+    }, []);
 
-  return (
-    <section className="profilepage">
-      <Profile user={user} />
-      {Array.isArray(communities) && communities.length > 0 ? (
-        <JoinedCommunities communities={communities} />
-      ) : (
-        <p>No communities joined yet.</p>
-      )}
-    </section>
-  );
+    return (
+        <section className="profilepage">
+            <div className="profilepage__section profilepage__section--left">
+                <Profile user={user} />
+            </div>
+            <div className="profilepage__section profilepage__section--right">
+                <JoinedCommunities communities={communities} />
+            </div>
+        </section>
+    )
 }
 
 export default ProfilePage;
