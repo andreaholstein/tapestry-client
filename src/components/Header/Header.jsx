@@ -13,7 +13,7 @@ function Header() {
 
   useEffect(() => {
     function switchHeaderButtons() {
-      if (location.pathname === `/`) {
+      if (location.pathname === `/home`) {
         // TOGGLE STATES - PROFILE BUTTON TO SHOW
         setIsProfileButton(true);
         if (!isProfileButton) {
@@ -36,7 +36,7 @@ function Header() {
       {!shouldHideHeader && (
         <header className="header">
           <nav className="header__nav">
-            <Link to="/community">
+            <Link to="/home">
               <h1 className="header__logo">tapestry</h1>
             </Link>
 

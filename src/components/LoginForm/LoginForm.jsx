@@ -56,7 +56,7 @@ function LoginForm() {
 
       localStorage.setItem("authToken", data.authToken);
 
-      navigate("/community");
+      navigate("/home");
     } catch (error) {
       if (error.response && error.response.data.message) {
         setErrors({ formError: error.response.data.message });
