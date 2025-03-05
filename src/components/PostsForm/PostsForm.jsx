@@ -34,12 +34,6 @@ function PostsForm({ refreshPosts }) {
       return;
     }
 
-    // const userId = localStorage.getItem("userId");
-    // if (!userId) {
-    //   setError("User ID not found. Please log in.");
-    //   return;
-    // }
-
     const formData = new FormData();
     formData.append("post_text", postText);
     formData.append("community_id", communityId);
