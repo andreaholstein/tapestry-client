@@ -63,12 +63,10 @@ function PostsForm({ refreshPosts }) {
         setError("");
         alert("Post submitted successfully!");
 
-        // Call the callback to refresh posts
         if (refreshPosts) {
           refreshPosts();
         }
 
-        // Optionally navigate if needed:
         navigate(`/community/${communityId}`);
       }
     } catch (error) {
