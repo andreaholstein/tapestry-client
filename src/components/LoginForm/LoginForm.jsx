@@ -27,7 +27,7 @@ function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `${baseURL}/users/login`;
+    const url = `${baseURL}users/login`;
 
     const newErrors = {};
 
