@@ -4,14 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage/HomePage";
 import CommunityPage from "./pages/CommunityPage/CommunityPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 // -------------- COMPONENTS --------------
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 // -------------- STYLES --------------
 import "./styles/global.scss";
 import "./App.scss";
+import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
