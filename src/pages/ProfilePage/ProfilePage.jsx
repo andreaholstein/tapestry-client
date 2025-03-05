@@ -1,11 +1,11 @@
 // -------------- FXNALITY --------------
-import axios from 'axios'
-import { useState, useEffect } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 // -------------- COMPONENTS --------------
-import Profile from '../../components/Profile/Profile'
-import JoinedCommunities from '../../components/JoinedCommunities/JoinedCommunities';
+import Profile from "../../components/Profile/Profile";
+import JoinedCommunities from "../../components/JoinedCommunities/JoinedCommunities";
 // -------------- STYLES --------------
-import './ProfilePage.scss'
+import "./ProfilePage.scss";
 
 function ProfilePage() {
 
@@ -58,4 +58,4 @@ function ProfilePage() {
     )
 }
 
-export default ProfilePage
+export default ProfilePage;

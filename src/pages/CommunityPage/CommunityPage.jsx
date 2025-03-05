@@ -1,13 +1,12 @@
-// -------------- FXNALITY --------------
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 // -------------- COMPONENTS --------------
 import CommunitySidebar from "../../components/CommunitySidebar/CommunitySidebar";
 import PostCard from "../../components/PostCard/PostCard";
+import PostsForm from "../../components/PostsForm/PostsForm";
 // -------------- STYLES --------------
 import "./CommunityPage.scss";
-import PostsForm from "../../components/PostsForm/PostsForm";
 
 const CommunityPage = () => {
   const { id } = useParams();
@@ -16,6 +15,7 @@ const CommunityPage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Fetch community and user data
   useEffect(() => {
     const fetchCommunityData = async () => {
       try {
@@ -35,22 +35,33 @@ const CommunityPage = () => {
           );
           setUser(userData);
         }
-
-        const { data: postsData } = await axios.get(
-          `http://localhost:8080/posts`,
-          {
-            params: { community_id: id },
-          }
-        );
-        setPosts(postsData);
       } catch (error) {
-        console.error("Error fetching community, user, or posts:", error);
-      } finally {
-        setLoading(false);
+        console.error("Error fetching community or user:", error);
       }
     };
 
     fetchCommunityData();
+  }, [id]);
+
+  // Function to fetch posts; can be called on mount and after a new post submission
+  const fetchPosts = async () => {
+    try {
+      const { data: postsData } = await axios.get(
+        `http://localhost:8080/posts`,
+        {
+          params: { community_id: id },
+        }
+      );
+      setPosts(postsData);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
   }, [id]);
 
   if (loading) return <p>Loading...</p>;
@@ -66,7 +77,8 @@ const CommunityPage = () => {
         ) : (
           <p>No posts yet.</p>
         )}
-        <PostsForm />
+        {/* Pass fetchPosts as a callback prop so PostsForm can refresh posts after submission */}
+        <PostsForm refreshPosts={fetchPosts} />
       </div>
     </div>
   );
