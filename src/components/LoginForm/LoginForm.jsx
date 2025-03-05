@@ -2,7 +2,7 @@ import { useState } from "react";
 import { baseURL } from "../../utils/api";
 import axios from "axios";
 import { Link, useNavigate } from "react-router";
-import errorIcon from "../../assets/icons/error-icon.svg"
+import errorIcon from "../../assets/icons/error-icon.svg";
 import "./LoginForm.scss";
 
 function LoginForm() {
@@ -48,8 +48,6 @@ function LoginForm() {
       return;
     }
 
-    console.log("Form submitted", formData);
-
     try {
       const { data } = await axios.post(url, {
         email: formData.email,
@@ -58,7 +56,7 @@ function LoginForm() {
 
       localStorage.setItem("authToken", data.authToken);
 
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       if (error.response && error.response.data.message) {
         setErrors({ formError: error.response.data.message });

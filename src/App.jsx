@@ -19,9 +19,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path='/login' element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
