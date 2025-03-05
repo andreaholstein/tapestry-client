@@ -1,5 +1,4 @@
 // -------------- FXNALITY --------------
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router";
 // -------------- PAGES --------------
 import HomePage from "./pages/HomePage/HomePage";
@@ -27,21 +26,6 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
-=======
-import { BrowserRouter, Router } from 'react-router'
-import { Routes } from 'react-router'
-// -------------- STYLES --------------
-import './App.scss'
-
-function App() {
-
-  return (
-    <>
-      <BrowserRouter>
-        <Router>
-
-        </Router>
->>>>>>> 4b563d4adb3af3276cc06df4eaf4132ec9eb730f
       </BrowserRouter>
     </>
   );
