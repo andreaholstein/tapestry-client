@@ -14,7 +14,6 @@ function PostsForm({ refreshPosts }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const userToken = localStorage.getItem("authToken");
-  const userId = localStorage.getItem("userId");
 
   useEffect(() => {
     if (!userToken) {
@@ -35,16 +34,15 @@ function PostsForm({ refreshPosts }) {
       return;
     }
 
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
-      setError("User ID not found. Please log in.");
-      return;
-    }
+    // const userId = localStorage.getItem("userId");
+    // if (!userId) {
+    //   setError("User ID not found. Please log in.");
+    //   return;
+    // }
 
     const formData = new FormData();
     formData.append("post_text", postText);
     formData.append("community_id", communityId);
-    formData.append("user_id", userId);
     if (postMedia) formData.append("post_media", postMedia);
 
     setIsSubmitting(true);
