@@ -57,7 +57,6 @@ function SignupForm() {
     const url = `${baseURL}users/register`;
 
     if (!validateForm()) {
-      console.log("validation failed:", errors);
       return;
     }
     try {
@@ -75,12 +74,17 @@ function SignupForm() {
     } catch (error) {
       console.error(error);
     }
-  };    
+  };
 
   return (
     <article className="signup-form">
       <h1 className="signup-form__title">Sign up today!</h1>
-      <p className="signup-form__text">Already have an account? <Link to={"/login"} className="signup-form__link">Log in</Link></p>
+      <p className="signup-form__text">
+        Already have an account?{" "}
+        <Link to={"/login"} className="signup-form__link">
+          Log in
+        </Link>
+      </p>
       <form action="" className="signup-form__form" onSubmit={handleSubmit}>
         {[
           { label: "First Name", name: "first_name" },

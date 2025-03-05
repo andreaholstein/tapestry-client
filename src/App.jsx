@@ -10,9 +10,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 // -------------- STYLES --------------
 import "./styles/global.scss";
-import './App.scss';
-import SignupPage from './pages/SignupPage/SignupPage';
-import LoginPage from './pages/LoginPage/LoginPage';
+import "./App.scss";
+import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -20,11 +20,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path='/login' element={<LoginPage />} />
+          <Route path="/community" element={<HomePage />} />
           <Route path="/community/:id" element={<CommunityPage />} />
-          {/* <Route path="/community/:communityId/posts" element={<PostsForm />} /> */}
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
