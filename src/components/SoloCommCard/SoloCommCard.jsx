@@ -3,6 +3,7 @@
 import './SoloCommCard.scss'
 
 function SoloCommCard({ community }) {
+    const url = import.meta.env.VITE_API_URL;
 
     if (!community) {
         return <div className="profile__loading">
@@ -16,7 +17,7 @@ function SoloCommCard({ community }) {
     return (
         <div className="community">
             <div className="community__wrap">
-                <img className="community__photo" src={`http://localhost:8080/${community.photo}`} alt={community.alt_text} />
+                <img className="community__photo" src={`${url}${community.photo}`} alt={community.alt_text} />
                 <div className="community__text">
                     <h2 className="community__title">{community.title}</h2>
                 </div>
