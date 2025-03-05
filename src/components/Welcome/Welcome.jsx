@@ -1,7 +1,4 @@
 // -------------- FXNALITY --------------
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
 // -------------- ICONS --------------
 import Donut from "../../assets/images/Donut.jsx"
 import Star from "../../assets/images/Star.jsx"
