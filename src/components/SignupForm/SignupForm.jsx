@@ -54,7 +54,7 @@ function SignupForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `${baseURL}/users/register`;
+    const url = `${baseURL}users/register`;
 
     if (!validateForm()) {
       console.log("validation failed:", errors);
