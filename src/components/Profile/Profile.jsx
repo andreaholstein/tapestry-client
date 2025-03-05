@@ -2,7 +2,7 @@
 // -------------- ICONS --------------
 import Star from "../../assets/images/Star"
 // -------------- STYLES --------------
-import './Profile.scss'
+import './Profile.scss';
 
 function Profile({ user }) {
     const placeholderUser = {
@@ -47,7 +47,7 @@ function Profile({ user }) {
                     Sunt laudantium quo assumenda est rem autem veritatis nisi similique voluptatem vero ullam dolor, architecto magni nobis accusamus deleniti debitis? Iste obcaecati ipsa dolor ea laborum sequi reiciendis modi maiores!</p>
             </div>
         </section>
-    )
+    );
 }
 
-export default Profile
+export default Profile;
