@@ -69,7 +69,7 @@ function SignupForm() {
       });
       setSuccess(true);
       setTimeout(() => {
-        navigate("/login");
+        navigate("/");
       }, 1500);
     } catch (error) {
       console.error(error);
