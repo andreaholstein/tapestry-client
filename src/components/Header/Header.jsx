@@ -5,7 +5,7 @@ import "./Header.scss";
 
 function Header() {
   const location = useLocation();
-  const hideHeader = ["/login", "/signup"];
+  const hideHeader = ["/", "/signup"];
   const shouldHideHeader = hideHeader.includes(location.pathname);
 
   const [isProfileButton, setIsProfileButton] = useState(null);

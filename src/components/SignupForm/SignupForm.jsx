@@ -69,7 +69,7 @@ function SignupForm() {
       });
       setSuccess(true);
       setTimeout(() => {
-        navigate("/login");
+        navigate("/");
       }, 1500);
     } catch (error) {
       console.error(error);
@@ -81,7 +81,7 @@ function SignupForm() {
       <h1 className="signup-form__title">Sign up today!</h1>
       <p className="signup-form__text">
         Already have an account?{" "}
-        <Link to={"/login"} className="signup-form__link">
+        <Link to={"/"} className="signup-form__link">
           Log in
         </Link>
       </p>
