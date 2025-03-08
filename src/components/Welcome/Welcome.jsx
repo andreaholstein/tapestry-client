@@ -10,6 +10,11 @@ import "./Welcome.scss";
 
 function Welcome({ user, communities }) {
 
+  let loadedCommunities = communities;
+  if (!communities) {
+    loadedCommunities = [];
+  }
+
   return (
     <section className="welcome">
       <div className="welcome__wrap">
@@ -38,7 +43,7 @@ function Welcome({ user, communities }) {
             </span>
           </h2>
           <p className="welcome__content welcome__alert">
-            You have {communities.length} communities waiting for you to check
+            You have {loadedCommunities.length} communities waiting for you to check
             in!
           </p>
         </div>
