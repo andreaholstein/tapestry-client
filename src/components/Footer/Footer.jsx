@@ -17,7 +17,7 @@ function Footer() {
                     <div className="footer__links-wrap">
                         <div className="footer__links">
                             <a href="https://www.linkedin.com/in/andrea-holstein/" className="footer__link footer__link-linkedin">
-                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     viewBox="0 0 310 310" >
                                     <g id="XMLID_801_">
                                         <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73
@@ -34,7 +34,7 @@ function Footer() {
                         </div>
                         <div className="footer__links">
                             <a href="https://github.com/andreaholstein/" className="footer__link footer__link-github">
-                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     width="18px" height="18px" viewBox="0 0 578.305 578.305"
                                 >
                                     <g>
@@ -74,7 +74,7 @@ function Footer() {
                     <div className="footer__links-wrap">
                         <div className="footer__links">
                             <a href="https://www.linkedin.com/in/khushi-parekh-uxdeveloper/" className="footer__link footer__link-linkedin">
-                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     viewBox="0 0 310 310" >
                                     <g id="XMLID_801_">
                                         <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73
@@ -91,7 +91,7 @@ function Footer() {
                         </div>
                         <div className="footer__links">
                             <a href="https://github.com/khushi4541" className="footer__link footer__link-github">
-                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     width="18px" height="18px" viewBox="0 0 578.305 578.305"
                                 >
                                     <g>
@@ -131,7 +131,7 @@ function Footer() {
                     <div className="footer__links-wrap">
                         <div className="footer__links">
                             <a href="https://www.linkedin.com/in/rebeccascott01/" className="footer__link footer__link-linkedin">
-                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     viewBox="0 0 310 310" >
                                     <g id="XMLID_801_">
                                         <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73
@@ -148,7 +148,7 @@ function Footer() {
                         </div>
                         <div className="footer__links">
                             <a href="https://github.com/shortcircuits94" className="footer__link footer__link-github">
-                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     width="18px" height="18px" viewBox="0 0 578.305 578.305"
                                 >
                                     <g>
@@ -188,7 +188,7 @@ function Footer() {
                     <div className="footer__links-wrap">
                         <div className="footer__links">
                             <a href="https://www.linkedin.com/in/savannahmc/" className="footer__link footer__link-linkedin">
-                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     viewBox="0 0 310 310" >
                                     <g id="XMLID_801_">
                                         <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73
@@ -205,7 +205,7 @@ function Footer() {
                         </div>
                         <div className="footer__links">
                             <a href="https://github.com/savannahmartin" className="footer__link footer__link-github">
-                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg fill="#fefaec" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                                     width="18px" height="18px" viewBox="0 0 578.305 578.305"
                                 >
                                     <g>

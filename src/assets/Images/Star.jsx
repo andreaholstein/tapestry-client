@@ -16,8 +16,8 @@ function Star() {
           d="M50.0629 32.2523L51.3946 57.8791L29.0175 70.491L53.8407 77.1483L58.8743 102.312L72.8694 80.7859M50.0629 32.2523L68.9413 49.6337L92.9324 40.4565L82.2142 63.8153L98.3731 83.7507L72.8694 80.7859"
           stroke="#F38181"
           strokeWidth="8.25"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
